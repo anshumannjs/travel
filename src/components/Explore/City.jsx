@@ -32,7 +32,7 @@ export default function City(props) {
         <div className='w-[80%] mx-auto'>
           {city.highlight.map((e)=>{
           return(
-            <div className='flex'>
+            <div key={e} className='flex'>
               <CircleIcon fontSize='small' color='info' className='my-auto mr-2'></CircleIcon>
               <div>
                 {e}

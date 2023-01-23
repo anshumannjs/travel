@@ -2,6 +2,12 @@ import React from 'react'
 import Container from '../Container'
 
 export default function Explore(props) {
+
+
+  function handleClick(e){
+    console.log(e);
+  }
+
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto gap-10 mt-10'>
       <Container type={'destination'} city={'Kanchenjunga Base Camp'} setCity={props.setCity}></Container>

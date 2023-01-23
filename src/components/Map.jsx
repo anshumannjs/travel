@@ -9,9 +9,25 @@ import forwardImg from './next-icon.png'
 import backImg from './previous-icon.png'
 import demoImg from './istockphoto-614316294-612x612.jpg'
 import next from './130884.png'
+import { useDispatch } from 'react-redux'
+import { newCity } from '../Redux States/CityInfo';
+import { useNavigate } from 'react-router-dom';
+import { Obj } from './Explore/CityObj';
 
 
-export default function Map() {
+export default function Map(props) {
+
+  const dispatch=useDispatch();
+  const navigate=useNavigate();
+
+  function handleClick(e){
+    console.log(e.target.innerText);
+    let ans=e.target.innerText.split(" ").join("")
+        dispatch(newCity(Obj[ans]))
+        props.setCity(ans);
+        navigate(`/${ans}`);
+  }
+
   useEffect(()=>{
     marker1Click();
   },[])
@@ -158,15 +174,15 @@ export default function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
-        <Marker position={[20.2961, 85.8245]} eventHandlers={{ click: marker1Click }} icon={marker1 ? new LargeLeafIcon({ iconUrl: locationMarker }) : new LeafIcon({ iconUrl: locationMarker })}>
+        <Marker position={[27.702414, 88.147881]} eventHandlers={{ click: marker1Click }} icon={marker1 ? new LargeLeafIcon({ iconUrl: locationMarker }) : new LeafIcon({ iconUrl: locationMarker })}>
         </Marker>
-        <Marker position={[20.4625, 85.8830]} eventHandlers={{ click: marker2Click }} icon={marker2 ? new LargeLeafIcon({ iconUrl: locationMarker }) : new LeafIcon({ iconUrl: locationMarker })}>
+        <Marker position={[28.56964, 77.1865]} eventHandlers={{ click: marker2Click }} icon={marker2 ? new LargeLeafIcon({ iconUrl: locationMarker }) : new LeafIcon({ iconUrl: locationMarker })}>
         </Marker>
-        <Marker position={[21.9320, 86.7466]} eventHandlers={{ click: marker3Click }} icon={marker3 ? new LargeLeafIcon({ iconUrl: locationMarker }) : new LeafIcon({ iconUrl: locationMarker })}>
+        <Marker position={[30.3875, 78.51305]} eventHandlers={{ click: marker3Click }} icon={marker3 ? new LargeLeafIcon({ iconUrl: locationMarker }) : new LeafIcon({ iconUrl: locationMarker })}>
         </Marker>
-        <Marker position={[21.0574, 86.4963]} eventHandlers={{ click: marker4Click }} icon={marker4 ? new LargeLeafIcon({ iconUrl: locationMarker }) : new LeafIcon({ iconUrl: locationMarker })}>
+        <Marker position={[34.04042, 77.32651]} eventHandlers={{ click: marker4Click }} icon={marker4 ? new LargeLeafIcon({ iconUrl: locationMarker }) : new LeafIcon({ iconUrl: locationMarker })}>
         </Marker>
-        <Marker position={[18.8135, 82.7123]} eventHandlers={{ click: marker5Click }} icon={marker5 ? new LargeLeafIcon({ iconUrl: locationMarker }) : new LeafIcon({ iconUrl: locationMarker })}>
+        <Marker position={[30.4456, 79.5700]} eventHandlers={{ click: marker5Click }} icon={marker5 ? new LargeLeafIcon({ iconUrl: locationMarker }) : new LeafIcon({ iconUrl: locationMarker })}>
         </Marker>
       </MapContainer>
       <div className='flex overflow-x-auto scroll-m-0 space-x-5 scroller place-content-evenly h-[30%]'>
@@ -175,36 +191,36 @@ export default function Map() {
         </div>
         <div id='1' className='border border-black min-w-[80%] m-auto h-[80%] mapAnimate rounded-xl flex flex-col md:flex-row' >
           <img src={demoImg} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
-          <div className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
-            <div className='my-auto ml-3 text-white'>Bhubaneswar</div>
+          <div onClick={(e)=>handleClick(e)} className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
+            <div className='my-auto ml-3 text-white'>Kanchenjunga Base Camp</div>
             <img src={next} alt="" className='w-[10%] h-[40%] my-auto'/>
           </div>
         </div>
         <div id='2' className='border hidden border-black min-w-[80%] m-auto h-[80%] mapAnimate rounded-xl  flex-col md:flex-row' >
           <img src={demoImg} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
           <div className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
-            <div className='my-auto ml-3 text-white'>Cuttack</div>
+            <div className='my-auto ml-3 text-white'>Chadar Trek</div>
             <img src={next} alt="" className='w-[10%] h-[40%] my-auto'/>
           </div>
         </div>
         <div id='3' className='border hidden border-black min-w-[80%] m-auto h-[80%] mapAnimate rounded-xl  flex-col md:flex-row' >
           <img src={demoImg} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
           <div className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
-            <div className='my-auto ml-3 text-white'>Baripada</div>
+            <div className='my-auto ml-3 text-white'>Gomukh Tapovan Trek</div>
             <img src={next} alt="" className='w-[10%] h-[40%] my-auto'/>
           </div>
         </div>
         <div id='4' className='border hidden border-black min-w-[80%] m-auto h-[80%] mapAnimate rounded-xl  flex-col md:flex-row' >
           <img src={demoImg} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
           <div className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
-            <div className='my-auto ml-3 text-white'>Banpur</div>
+            <div className='my-auto ml-3 text-white'>Markha Valley Trek</div>
             <img src={next} alt="" className='w-[10%] h-[40%] my-auto'/>
           </div>
         </div>
         <div id='5' className='border hidden border-black min-w-[80%] m-auto h-[80%] mapAnimate rounded-xl  flex-col md:flex-row' >
           <img src={demoImg} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
           <div className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
-            <div className='my-auto ml-3 text-white'>koraput</div>
+            <div className='my-auto ml-3 text-white'>Kuari Pass Trek</div>
             <img src={next} alt="" className='w-[10%] h-[40%] my-auto'/>
           </div>
         </div>

@@ -8,19 +8,20 @@ import { newCity } from '../Redux States/CityInfo';
 
 export default function Container(props) {
     const dispatch=useDispatch();
-
+    
+    
     const navigate=useNavigate();
     function destinationClicker(){
         let ans=props.city.split(" ").join("")
         dispatch(newCity(Obj[ans]))
-        props.setCity(props.city);
-        navigate(`/${props.city}`);
+        props.setCity(ans);
+        navigate(`/${ans}`);
     }
 
     if (props.type=='service'){
         return (
             <div className='w-[18%] border-gray-400 border flex flex-col rounded-lg hover:cursor-pointer'>
-                <img src={pickUp} alt="" className='h-[70%] w-[100%] rounded-t-lg' />
+                <img src={props.img} alt="" className='h-[70%] w-[100%] rounded-t-lg' />
                 <div className='p-3 space-y-3 mt-0'>
                     <h1 className='text-center text-fuchsia-500 font-bold'>{props.name}</h1>
                     <p className='text-xs text-left'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore aut facilis ipsam velit tenetur unde necessitatibus neque provident atque? Adipisci suscipit commodi laborum provident autem sequi molestias quaerat vitae rem.</p>
@@ -35,8 +36,8 @@ export default function Container(props) {
     }
     else if (props.type=='destination'){
         return(
-            <div onClick={destinationClicker} className='w-[90%] h-40 md:h-60 max-lg:h-80 m-auto border border-black rounded-lg'>
-                <img src={pickUp} alt="" className='h-[80%] w-full rounded-t-lg'/>
+            <div onClick={destinationClicker} className='w-[90%] h-40 md:h-60 lg:h-96 m-auto border border-black rounded-lg'>
+                <img src={Obj[props.city.split(" ").join("")].image} alt="" className='h-[80%] w-full rounded-t-lg'/>
                 <div className='w-full h-[20%] flex justify-between'>
                     <div>
                         {props.city}

@@ -32,7 +32,7 @@ function App() {
     return(
       <>
       <Services></Services>
-      <Map></Map>
+      <Map setCity={setcity}></Map>
       <ExploreMore></ExploreMore>
       </>
     )
@@ -49,6 +49,7 @@ function App() {
   }
 
   function HandleCity(){
+    console.log(city1.name)
     setCoverName(city1.name);
     setCoverImg(city1.image);
     return(
@@ -73,20 +74,18 @@ function App() {
   }
 
   return (
-    <Router>
     <div className="App">
       <Navbar></Navbar>
       <Cover img={coverImg} name={coverName}></Cover>
       <Switch>
         <Route path='/' element={<Home/>} />
         <Route path='/explore' element={<HandleExplore/>}/>
-        <Route path={`/${city}`} element={<HandleCity/>}/>
+        <Route path={`/${city1.name.split(" ").join("")}`} element={<HandleCity/>}/>
         <Route path='/bookingForm' element={<HandleBooking/>}/>
         <Route path='/contactUs' element={<HandleContact/>}/>
       </Switch>
       <Ending></Ending>
     </div>
-    </Router>
   );
 }
 

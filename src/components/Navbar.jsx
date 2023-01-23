@@ -3,11 +3,20 @@ import logo from './logo-social.png'
 import cross from './images.png'
 import menuLogo from './menu.png'
 import { useState,useEffect } from 'react'
-import {BrowserRouter as Router , Switch,Route,Link} from 'react-router-dom'
+import {BrowserRouter as Router , Switch,Route,Link, useLocation} from 'react-router-dom'
 
 export default function Navbar() {
     const [menu,setMenu]=useState(false);
     const [open,setOpen]=useState(false);
+    let location=useLocation();
+
+    useEffect(()=>{
+        setOpen(false);
+            setTimeout(() => {
+                setMenu(false);
+                
+            }, 200);
+    },[location])
 
     useEffect(()=>{
         window.addEventListener('scroll',scrollLevel);

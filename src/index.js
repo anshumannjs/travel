@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { store } from './Redux States/store';
+import { BrowserRouter as Router } from 'react-router-dom';
+import {persistor,store} from './Redux States/store'
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -15,7 +17,11 @@ import { store } from './Redux States/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+    <Router>
     <App />
+    </Router>
+    </PersistGate>
   </Provider>
 );
 // ReactDOM.render(
