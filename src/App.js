@@ -74,7 +74,7 @@ function App() {
   }
 
   console.log(city1)
-  console.log(city1==undefined?null:city1.name.split(" ").join(""))
+  console.log(city1===undefined?null:city1.name.split(" ").join(""))
 
   return (
     <div className="App">
@@ -84,7 +84,7 @@ function App() {
       <Switch>
         <Route path='/' element={<Home/>} />
         <Route path='/explore' element={<HandleExplore/>}/>
-        <Route path={`/${city}`} element={<HandleCity/>}/>
+        <Route path={`/${city1===undefined?null:city1.name.split(" ").join("")}`} element={<HandleCity/>}/>
         <Route path='/bookingForm' element={<HandleBooking/>}/>
         <Route path='/contactUs' element={<HandleContact/>}/>
       </Switch>
