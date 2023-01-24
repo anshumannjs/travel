@@ -169,7 +169,7 @@ export default function Map(props) {
 
   return (
     <div className='mt-5 w-full h-[600px] flex flex-col'>
-      <MapContainer center={[20.2376, 84.2700]} zoom={5} scrollWheelZoom={false} className={`w-full h-[65%]`}>
+      <MapContainer center={[28.2376, 84.2700]} zoom={5} scrollWheelZoom={false} className={`w-full h-[65%]`}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
@@ -190,35 +190,35 @@ export default function Map(props) {
           <img src={backImg} alt="" />
         </div>
         <div id='1' className='border border-black min-w-[80%] m-auto h-[80%] mapAnimate rounded-xl flex flex-col md:flex-row' >
-          <img src={demoImg} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
+          <img src={Obj.KanchenjungaBaseCamp.image} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
           <div onClick={(e)=>handleClick(e)} className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
             <div className='my-auto ml-3 text-white'>Kanchenjunga Base Camp</div>
             <img src={next} alt="" className='w-[10%] h-[40%] my-auto'/>
           </div>
         </div>
         <div id='2' className='border hidden border-black min-w-[80%] m-auto h-[80%] mapAnimate rounded-xl  flex-col md:flex-row' >
-          <img src={demoImg} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
+          <img src={Obj.ChadarTrek.image} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
           <div className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
             <div className='my-auto ml-3 text-white'>Chadar Trek</div>
             <img src={next} alt="" className='w-[10%] h-[40%] my-auto'/>
           </div>
         </div>
         <div id='3' className='border hidden border-black min-w-[80%] m-auto h-[80%] mapAnimate rounded-xl  flex-col md:flex-row' >
-          <img src={demoImg} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
+          <img src={Obj.GomukhTapovanTrek.image} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
           <div className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
             <div className='my-auto ml-3 text-white'>Gomukh Tapovan Trek</div>
             <img src={next} alt="" className='w-[10%] h-[40%] my-auto'/>
           </div>
         </div>
         <div id='4' className='border hidden border-black min-w-[80%] m-auto h-[80%] mapAnimate rounded-xl  flex-col md:flex-row' >
-          <img src={demoImg} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
+          <img src={Obj.MarkhaValleyTrek.image} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
           <div className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
             <div className='my-auto ml-3 text-white'>Markha Valley Trek</div>
             <img src={next} alt="" className='w-[10%] h-[40%] my-auto'/>
           </div>
         </div>
         <div id='5' className='border hidden border-black min-w-[80%] m-auto h-[80%] mapAnimate rounded-xl  flex-col md:flex-row' >
-          <img src={demoImg} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
+          <img src={Obj.KuariPassTrek.image} alt="" className='w-full h-[70%] rounded-t-xl md:h-full md:w-[70%] md:rounded-l-xl md:rounded-r-none'/>
           <div className='bg-cyan-500 h-[30%] w-full flex justify-between rounded-b-xl md:rounded-r-xl md:rounded-l-none md:h-full'>
             <div className='my-auto ml-3 text-white'>Kuari Pass Trek</div>
             <img src={next} alt="" className='w-[10%] h-[40%] my-auto'/>

@@ -15,7 +15,7 @@ export default function ExploreMore() {
               </Link>
             </div>
         </div>
-        <img src={demoImg} alt="" className='w-full md:w-[50%] h-[60%] md:h-full rounded-b-lg md:rounded-r-lg md:rounded-l-none'/>
+        <img src={'https://media.nomadicmatt.com/preparedtraveler.jpg'} alt="" className='w-full md:w-[50%] h-[60%] md:h-full rounded-b-lg md:rounded-r-lg md:rounded-l-none'/>
     </div>
   )
 }

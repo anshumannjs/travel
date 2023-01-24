@@ -78,7 +78,6 @@ function App() {
 
   return (
     <div className="App">
-      <div>Hello there</div>
       <Navbar></Navbar>
       <Cover img={coverImg} name={coverName}></Cover>
       <Switch>
