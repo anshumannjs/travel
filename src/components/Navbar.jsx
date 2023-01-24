@@ -74,7 +74,7 @@ export default function Navbar() {
                 </div>
                 <div className='mt-[10%] space-y-1'>
                     <div className='hover:border border-black rounded-sm text-center w-[95%] m-auto text-fuchsia-500 hover:text-white hover:bg-fuchsia-500'>
-                        <Link to={'/'}>
+                        <Link to={'/travel'}>
                             Home
                         </Link>
                     </div>
@@ -109,7 +109,7 @@ export default function Navbar() {
                 </div>
                 <div className='hidden lg:flex space-x-3 mr-3 font-semibold'>
                     <div className='hover:text-cyan-500 hover:cursor-pointer'>
-                        <Link to={'/'}>
+                        <Link to={'/travel'}>
                             Home
                         </Link>
                     </div>

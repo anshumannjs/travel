@@ -78,7 +78,7 @@ function App() {
       <Navbar></Navbar>
       <Cover img={coverImg} name={coverName}></Cover>
       <Switch>
-        <Route path='/' element={<Home/>} />
+        <Route path='/travel' element={<Home/>} />
         <Route path='/explore' element={<HandleExplore/>}/>
         <Route path={`/${city1.name.split(" ").join("")}`} element={<HandleCity/>}/>
         <Route path='/bookingForm' element={<HandleBooking/>}/>
